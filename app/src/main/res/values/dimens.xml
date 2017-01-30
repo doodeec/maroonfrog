@@ -1,0 +1,17 @@
+<resources>
+    <!--padding-->
+    <dimen name="xxbig_padding">32dp</dimen>
+    <dimen name="xbig_padding">24dp</dimen>
+    <dimen name="big_padding">16dp</dimen>
+    <dimen name="middle_padding">12dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="small_padding">4dp</dimen>
+    <dimen name="xsmall_padding">2dp</dimen>
+
+    <dimen name="touch_size">48dp</dimen>
+
+    <dimen name="meal_thumb_width">90dp</dimen>
+    <dimen name="meal_thumb_height">60dp</dimen>
+
+
+</resources>

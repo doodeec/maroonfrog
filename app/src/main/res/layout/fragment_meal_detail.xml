@@ -1,0 +1,42 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/padding">
+
+    <TextView
+        android:id="@+id/meal_name"
+        style="@style/SidesMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        tools:text="Product Name" />
+
+    <TextView
+        android:id="@+id/meal_desc"
+        style="@style/SidesMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        tools:text="Product description" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/picked_addon_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding"
+        android:requiresFadingEdge="horizontal"
+        tools:layout_height="36dp"
+        tools:listitem="@layout/view_addon" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/addon_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding"
+        android:requiresFadingEdge="vertical"
+        tools:listitem="@layout/view_addon" />
+</LinearLayout>

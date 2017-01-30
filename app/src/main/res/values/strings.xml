@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MaroonFrog</string>
+
+    <!-- Common -->
+    <string name="ok" translatable="false">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="loading">Loading…</string>
+
+    <!-- Activity Titles -->
+    <string name="activity_meal_title">Meal</string>
+</resources>

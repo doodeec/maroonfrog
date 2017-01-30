@@ -1,0 +1,62 @@
+ext.deps = [
+        support_appcompat : 'com.android.support:appcompat-v7:25.1.0',
+        support_recycler : 'com.android.support:recyclerview-v7:25.1.0',
+        support_design : 'com.android.support:design:25.1.0',
+        gson : 'com.google.code.gson:gson:2.8.0',
+        butterknife : 'com.jakewharton:butterknife:8.5.1',
+        butterknife_compiler : 'com.jakewharton:butterknife-compiler:8.5.1',
+        retrofit : 'com.squareup.retrofit2:retrofit:2.1.0',
+        retrofit_rxadapter : 'com.squareup.retrofit2:adapter-rxjava:2.1.0',
+        retrofit_gson_converter : 'com.squareup.retrofit2:converter-gson:2.1.0',
+        retrofit_log_interceptor : 'com.squareup.okhttp3:logging-interceptor:3.4.1',
+        mvp : 'com.hannesdorfmann.mosby:mvp:2.0.1',
+        dagger : 'com.google.dagger:dagger:2.8',
+        dagger_compiler : 'com.google.dagger:dagger-compiler:2.8',
+        javax : 'javax.annotation:jsr250-api:1.0',
+        rxandroid : 'io.reactivex:rxandroid:1.2.1',
+        rxjava : 'io.reactivex:rxjava:1.1.6',
+        rxbindings : 'com.jakewharton.rxbinding:rxbinding:1.0.0',
+        rxbindings_recycler : 'com.jakewharton.rxbinding:rxbinding-recyclerview-v7:1.0.0',
+        ormlite : 'com.j256.ormlite:ormlite-android:5.0',
+        picasso : 'com.squareup.picasso:picasso:2.5.2',
+        timber : 'com.jakewharton.timber:timber:4.5.1',
+        //test
+        junit : 'junit:junit:4.12',
+        mockito : 'org.mockito:mockito-core:2.6.3',
+        espresso : 'com.android.support.test.espresso:espresso-core:2.2.2',
+        espresso_contrib : 'com.android.support.test.espresso:espresso-contrib:2.2.1',
+        test_runner : 'com.android.support.test:runner:0.5',
+        spoon : 'com.squareup.spoon:spoon-client:1.7.0',
+]
+
+buildscript {
+    //overrides gradle
+    System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
+
+    repositories {
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'io.fabric.tools:gradle:1.21.6'
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.5.4'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xmaxerrs" << "1000"
+    }
+}

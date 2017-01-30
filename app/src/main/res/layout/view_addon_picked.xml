@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.doodeec.maroonfrog.ui.meal.detail.PickedAddonView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent"
+    tools:ignore="RtlHardcoded">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="@dimen/small_padding">
+
+        <ImageView
+            android:id="@+id/picked_addon_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close_white_24dp" />
+
+        <TextView
+            android:id="@+id/picked_addon_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_marginRight="@dimen/padding"
+            android:layout_toRightOf="@id/picked_addon_remove"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/white"
+            tools:text="Priloha" />
+    </RelativeLayout>
+
+</com.doodeec.maroonfrog.ui.meal.detail.PickedAddonView>

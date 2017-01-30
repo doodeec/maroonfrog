@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.doodeec.maroonfrog.ui.meal.detail.AddonCategoryView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/addon_category"
+    android:padding="@dimen/padding"
+    tools:ignore="RtlHardcoded">
+
+    <ImageView
+        android:id="@+id/addon_category_chevron"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:rotation="90"
+        android:src="@drawable/ic_chevron_right_black_36dp"
+        android:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/addon_category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/addon_category_chevron"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@android:color/white"
+        tools:text="Category" />
+
+</com.doodeec.maroonfrog.ui.meal.detail.AddonCategoryView>

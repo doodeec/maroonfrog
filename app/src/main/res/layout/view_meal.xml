@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.doodeec.maroonfrog.ui.meal.list.MealView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:padding="@dimen/padding"
+    tools:ignore="RtlHardcoded">
+
+    <ImageView
+        android:id="@+id/meal_photo"
+        android:layout_width="@dimen/meal_thumb_width"
+        android:layout_height="@dimen/meal_thumb_height"
+        android:layout_marginRight="@dimen/padding"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/food" />
+
+    <TextView
+        android:id="@+id/meal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/meal_photo"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        tools:text="Produkt" />
+
+    <TextView
+        android:id="@+id/meal_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/meal_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+        tools:text="15 evri" />
+
+    <TextView
+        android:id="@+id/meal_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/meal_price"
+        android:layout_below="@id/meal_name"
+        android:layout_toLeftOf="@id/meal_price"
+        android:layout_toRightOf="@id/meal_photo"
+        android:gravity="bottom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        tools:text="200g" />
+
+</com.doodeec.maroonfrog.ui.meal.list.MealView>

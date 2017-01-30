@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+//apply plugin: 'io.fabric'
+apply plugin: 'com.getkeepsafe.dexcount'
+
+apply from: "./base_setup.gradle"
+apply from: "./sign.gradle"
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.doodeec.maroonfrog"
+        minSdkVersion 15
+        targetSdkVersion 25
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+    }
+}
+
+dependencies {
+    compile deps.timber
+
+    compile deps.support_appcompat
+    compile deps.support_design
+    compile deps.support_recycler
+    compile deps.gson
+//    compile 'com.google.guava:guava:19.0'
+
+    //butterknife
+    compile deps.butterknife
+    apt deps.butterknife_compiler
+
+    //crashlytics
+    /*compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
+        transitive = true;
+    }*/
+
+    // retrofit
+    compile deps.retrofit
+    compile deps.retrofit_rxadapter
+    compile deps.retrofit_gson_converter
+    compile deps.retrofit_log_interceptor
+
+    // mosby
+    compile deps.mvp
+
+    // dagger
+    apt deps.dagger_compiler
+    compile deps.dagger
+    provided deps.javax
+
+    // rx
+    compile deps.rxandroid
+    compile deps.rxjava
+    compile deps.rxbindings
+//    compile deps.rxbindings_recycler
+
+    //ormlite
+    compile deps.ormlite
+
+    //picasso
+    compile deps.picasso
+
+    //test
+    testCompile deps.dagger_compiler
+    testCompile deps.junit
+//    testCompile 'org.hamcrest:hamcrest-core:1.3'
+    testCompile deps.mockito
+
+    //androidTest
+    androidTestCompile (deps.espresso) {
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile (deps.espresso_contrib) {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+        exclude module: 'cardview-v7'
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile (deps.test_runner) {
+        exclude module: 'support-annotations'
+    }
+    androidTestCompile deps.spoon
+}
